@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Final Project</title>
+    <link rel="stylesheet" type="text/css" href="../css/CreateTask.css" />
+  </head>
+  <body>
+    <div id="includedContent"></div>
+    <div class="divForm">
+      <form class="formCreateTask" id="formCreateTask">
+        <h1 style="color: white">Create Task</h1>
+        <div class="divTextfield">
+          <label for="txtTaskName">Task Name:</label>
+          <input type="text" id="txtTaskName" placeholder="Enter task name" />
+          <span id="errTaskName" class="error"></span>
+        </div>
+
+        <div class="divTextfield">
+          <label for="txtDescription">Task Description:</label>
+          <textarea id="txtDescription"></textarea><br />
+        </div>
+
+        <div class="divTextfield">
+          <label for="txtTaskStartDate">Task Start Date:</label>
+          <input
+            type="date"
+            id="txtTaskStartDate"
+            placeholder="Enter task start date"
+          />
+          <span id="errTaskStartDate" class="error"></span>
+        </div>
+
+        <div class="divTextfield">
+          <label for="txtTaskEndDate">Task End Date:</label>
+          <input
+            type="date"
+            id="txtTaskEndDate"
+            placeholder="Enter task end date"
+          />
+          <span id="errTaskEndDate" class="error"></span>
+        </div>
+
+        <div class="divTextfield">
+          <label for="txtAssignedMember">Member name:</label>
+          <select id="txtAssignedMember" onchange="handleMemberSelection()">
+            <option value="">Select a member</option>
+          </select>
+          <span id="errMember" class="error"></span>
+        </div>
+
+        <button type="submit" onclick="createTask()">Create Task</button>
+      </form>
+    </div>
+
+    <script src="../javascript/CreateTask.js"></script>
+    <script src="../javascript/SliderMenu.js"></script>
+    <script src="../src/models/MemberModel.js"></script>
+    <script src="../src/models/TaskModel.js"></script>
+  </body>
+</html>

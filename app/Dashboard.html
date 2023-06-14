@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Task Management</title>
+    <link rel="stylesheet" type="text/css" href="../css/Dashboard.css" />
+  </head>
+  <body>
+    <div id="includedContent"></div>
+
+    <h1 style="color: white">Dashboard</h1>
+
+    <div class="tab" onclick="changeTab(0)">Pending</div>
+    <div class="tab" onclick="changeTab(1)">Completed</div>
+
+    <div id="contentPending" class="content active">
+      <table id="tblPending"></table>
+    </div>
+
+    <div id="contentCompleted" class="content">
+      <table id="tblCompleted"></table>
+    </div>
+
+    <button id="btnCreateTask" onclick="openPopup()">
+      <img src="../src/asset/ig_add.png" alt="Add" />
+    </button>
+
+    <div id="overlay" onclick="closePopup()"></div>
+    <div id="popupContent">
+      <button id="closeButton" onclick="closePopup()">Close</button>
+      <iframe id="popupIframe" src="" frameborder="0"></iframe>
+    </div>
+
+    <script src="../javascript/Dashboard.js"></script>
+    <script src="../javascript/SliderMenu.js"></script>
+  </body>
+</html>

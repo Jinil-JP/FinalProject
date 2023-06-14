@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Final Project</title>
+    <link rel="stylesheet" type="text/css" href="../css/Login.css" />
+  </head>
+  <body>
+    <div class="divLogin">
+      <form class="formLogin" id="formLogin">
+        <h1>Login</h1>
+        <div class="divTextfield">
+          <label for="txtEmail">Email:</label>
+          <input type="text" id="txtEmail" placeholder="Enter your email" />
+          <span id="errEmail" class="error"></span>
+        </div>
+        <div class="divTextfield">
+          <label for="txtPassword">Password:</label>
+          <input
+            type="password"
+            id="txtPassword"
+            placeholder="Enter your password"
+          />
+          <span id="errPassword" class="error"></span>
+        </div>
+        <button type="submit">Log in</button>
+      </form>
+    </div>
+
+    <script src="../javascript/Login.js" type="module"></script>
+  </body>
+</html>

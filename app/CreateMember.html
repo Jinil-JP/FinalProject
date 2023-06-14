@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Final Project</title>
+    <link rel="stylesheet" type="text/css" href="../css/CreateMember.css" />
+  </head>
+  <body>
+    <div id="includedContent"></div>
+    <div class="divForm">
+      <form class="formCreateMember" id="formCreateMember">
+        <h1 style="color: white">Create Member</h1>
+        <div class="divTextfield">
+          <label for="txtMemberName">Member Name:</label>
+          <input
+            type="text"
+            id="txtMemberName"
+            placeholder="Enter member name"
+          />
+          <span id="errMemberName" class="error"></span>
+        </div>
+
+        <div class="divTextfield">
+          <label for="txtMemberEmail">Member Email:</label>
+          <input
+            type="text"
+            id="txtMemberEmail"
+            placeholder="Enter member email"
+          />
+          <span id="errMemberEmail" class="error"></span>
+        </div>
+
+        <div class="divTextfield">
+          <label for="txtHourlyRate">Hourly Rate:</label>
+          <input
+            type="number"
+            id="txtHourlyRate"
+            placeholder="Enter hourly rate"
+          />
+          <span id="errHourlyRate" class="error"></span>
+        </div>
+
+        <button type="submit" onclick="createMember()">Create Task</button>
+      </form>
+    </div>
+
+    <script src="../javascript/CreateTask.js"></script>
+    <script src="../javascript/SliderMenu.js"></script>
+  </body>
+</html>
