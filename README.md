@@ -1,2 +1,3 @@
 # FinalProject
-Lund Project
+
+Task Management Project with Javascript and HTML.
