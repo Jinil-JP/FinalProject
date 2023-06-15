@@ -25,7 +25,7 @@ function setupSliderMenu() {
 
     arrMenuItems.push({
       name: "Members",
-      url: "../app/Dashboard.html",
+      url: "../app/CreateMember.html",
     });
   }
 
