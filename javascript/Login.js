@@ -37,14 +37,13 @@ function validateForm() {
     return false;
   }
 
-  if (
-    email.toLowerCase().trim() != constant.adminEmail ||
-    password.trim() != constant.adminPassword
-  ) {
-    document.getElementById("errCredential").textContent =
-      constant.msgValidCredential;
-    return false;
-  }
+  localStorage.setItem(
+    "isAdmin",
+    !(
+      email.toLowerCase().trim() != constant.adminEmail ||
+      password.trim() != constant.adminPassword
+    )
+  );
 
   window.location.href = "../app/Dashboard.html";
   return true;
