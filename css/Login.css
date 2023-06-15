@@ -1,67 +1,66 @@
 body {
-    background-image: url('../src/asset/ig_LoginTheme.jpeg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    font-family: Arial, sans-serif;
-  }
-  
-  .divLogin {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-  }
-  
-  .formLogin {
-    background-color: rgba(255, 255, 255, 0.8);
-    padding: 40px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-    max-width: 400px;
-    width: 100%;
-  }
-  
-  .formLogin h1 {
-    text-align: center;
-    margin-bottom: 20px;
-  }
-  
-  .divTextfield {
-    margin-bottom: 20px;
-  }
+  background-image: url("../src/asset/ig_LoginTheme.jpeg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  font-family: Arial, sans-serif;
+}
 
-  .error {
-    color: red;
-    font-size: 14px;
-  }
-  
-  .divTextfield label {
-    display: block;
-    margin-bottom: 5px;
-  }
-  
-  .divTextfield input {
-    width: 100%;
-    padding: 10px;
-    font-size: 16px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-  }
-  
-  button[type="submit"] {
-    display: block;
-    width: 100%;
-    padding: 10px;
-    margin-top: 10px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-  }
-  
-  button[type="submit"]:hover {
-    background-color: #45a049;
-  }
-  
+.divLogin {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.formLogin {
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 40px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  max-width: 400px;
+  width: 100%;
+}
+
+.formLogin h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.divTextfield {
+  margin-bottom: 20px;
+}
+
+.error {
+  color: red;
+  font-size: 14px;
+}
+
+.divTextfield label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.divTextfield input {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+button[type="submit"] {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button[type="submit"]:hover {
+  background-color: #45a049;
+}

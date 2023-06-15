@@ -9,6 +9,7 @@ loginForm.addEventListener("submit", function (event) {
 function validateForm() {
   document.getElementById("errEmail").textContent = "";
   document.getElementById("errPassword").textContent = "";
+  document.getElementById("errCredential").textContent = "";
 
   var email = document.getElementById("txtEmail").value;
   var password = document.getElementById("txtPassword").value;
@@ -33,6 +34,15 @@ function validateForm() {
   if (password.length < 8) {
     document.getElementById("errPassword").textContent =
       constant.msgInvalidPassword;
+    return false;
+  }
+
+  if (
+    email.toLowerCase().trim() != constant.adminEmail ||
+    password.trim() != constant.adminPassword
+  ) {
+    document.getElementById("errCredential").textContent =
+      constant.msgValidCredential;
     return false;
   }
 
