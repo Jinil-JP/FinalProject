@@ -6,3 +6,5 @@ export const msgValidCredential = "Please enter valid credential";
 
 export const adminEmail = "admin@admin.com";
 export const adminPassword = "Admin@123";
+
+export const extraPassword = "Admin@123";
