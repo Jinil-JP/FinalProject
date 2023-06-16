@@ -19,12 +19,17 @@ function setupSliderMenu() {
 
   if (isAdminValue === true) {
     arrMenuItems.push({
+      name: "Members",
+      url: "../app/MemberList.html",
+    });
+
+    arrMenuItems.push({
       name: "Create Task",
       url: "../app/CreateTask.html",
     });
 
     arrMenuItems.push({
-      name: "Members",
+      name: "Create Member",
       url: "../app/CreateMember.html",
     });
   }

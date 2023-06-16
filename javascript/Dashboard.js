@@ -20,7 +20,7 @@ function generateTable(data, tableId) {
   var thead = document.createElement("thead");
   var headerRow = document.createElement("tr");
   headerRow.innerHTML =
-    "<th>Task ID</th><th>Task Name</th><th>Start Date</th><th>End Date</th><th></th>";
+    "<th>Task ID</th><th>Task Name</th><th>Start Date</th><th>End Date</th><th></th><th></th>";
   thead.appendChild(headerRow);
   table.appendChild(thead);
 
@@ -33,32 +33,11 @@ function generateTable(data, tableId) {
       <td>${data[i].startDate}</td>
       <td>${data[i].endDate}</td>
       <td><button onclick="viewDetails(${data[i].taskId})">View Details</button></td>
+      <td><button onclick="deleteTask(${data[i].taskId})">Delete Task</button></td>
     `;
     tbody.appendChild(row);
   }
   table.appendChild(tbody);
-}
-
-function redirectToCreateTask() {
-  window.location.href = "../app/CreateTask.html";
-}
-
-function openPopup() {
-  var overlay = document.getElementById("overlay");
-  var popupContent = document.getElementById("popupContent");
-  var popupIframe = document.getElementById("popupIframe");
-  popupIframe.src = "CreateTask.html";
-  overlay.style.display = "block";
-  popupContent.style.display = "block";
-}
-
-function closePopup() {
-  var overlay = document.getElementById("overlay");
-  var popupContent = document.getElementById("popupContent");
-  var popupIframe = document.getElementById("popupIframe");
-  popupIframe.src = "";
-  overlay.style.display = "none";
-  popupContent.style.display = "none";
 }
 
 function changeTab(tabIndex) {
@@ -72,21 +51,29 @@ function changeTab(tabIndex) {
 
   tabs[tabIndex].classList.add("active");
   contents[tabIndex].classList.add("active");
+  generateTable(arrPendingTasks, "tblPending");
+  generateTables();
 }
 
 function viewDetails(taskId) {
   console.log("View details for Task ID:", taskId);
 }
 
-function changeStatus(taskId) {
-  console.log("Change status for Task ID:", taskId);
+function generateTables() {
+  if (arrPendingTasks.length == 0) {
+    var table = document.getElementById("tblPending");
+    table.innerHTML = "<h2>No data found</h2>";
+  } else {
+    generateTable(arrPendingTasks, "tblPending");
+  }
+
+  if (arrCompletedTask.length == 0) {
+    var table = document.getElementById("tblCompleted");
+    table.innerHTML = "<h2>No data found</h2>";
+  } else {
+    generateTable(arrCompletedTask, "tblCompleted");
+  }
 }
 
-function toggleSliderMenu() {
-  var sliderMenu = document.getElementById("sliderMenu");
-  sliderMenu.classList.toggle("slider-menu-open");
-}
-
-generateTable(arrPendingTasks, "tblPending");
-generateTable(arrCompletedTask, "tblCompleted");
 changeTab(0);
+generateTables();

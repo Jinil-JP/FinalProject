@@ -1,5 +1,5 @@
 body {
-  background-image: url('../src/asset/ig_LoginTheme.jpeg');
+  background-image: url("../src/asset/ig_LoginTheme.jpeg");
   background-size: cover;
   background-repeat: no-repeat;
   font-family: Arial, sans-serif;
@@ -65,7 +65,7 @@ button[type="submit"] {
   width: 100%;
   padding: 10px;
   margin-top: 10px;
-  background-color: #4CAF50;
+  background-color: #4caf50;
   color: white;
   border: none;
   border-radius: 5px;
@@ -76,4 +76,3 @@ button[type="submit"] {
 button[type="submit"]:hover {
   background-color: #45a049;
 }
-

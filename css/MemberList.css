@@ -5,27 +5,10 @@ body {
   font-family: Arial, sans-serif;
 }
 
-.tab {
-  display: inline-block;
-  position: relative;
-  padding: 10px 40px 10px 40px;
-  background-color: lightgray;
-  cursor: pointer;
-  margin-bottom: 20px;
-}
-
-.tab.active {
-  background-color: white;
-}
-
 .content {
-  display: none;
+  display: block;
   padding: 20px;
   border: 1px solid white;
-}
-
-.content.active {
-  display: block;
 }
 
 button {
@@ -51,8 +34,10 @@ td {
   color: white;
   padding: 20px;
   text-align: center;
+  /* border-bottom: 1px solid gray; */
   border-bottom: 1px white;
 }
+
 tr {
   width: 100%;
 }

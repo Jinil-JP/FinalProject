@@ -31,16 +31,9 @@ class Task {
 
 var arrTasks = [];
 
-var arrMembers = [];
+var arrMembers = JSON.parse(localStorage.getItem("members")) || [];
+
 var selectedMember = new Member();
-
-var memberFirst = new Member(0, "Nimesh Vasani", "nimesh@gmail.com", 40);
-var memberSecond = new Member(1, "Jontish Kakadiya", "Jontish@gmail.com", 35);
-var memberThird = new Member(2, "Kathan Patel", "Kathan@gmail.com", 25);
-
-arrMembers.push(memberFirst);
-arrMembers.push(memberSecond);
-arrMembers.push(memberThird);
 
 const selectElement = document.getElementById("txtAssignedMember");
 
@@ -63,7 +56,8 @@ function handleMemberSelection() {
 }
 
 function createTask() {
-  var taskId = 0;
+  var tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+  var taskId = tasks.length;
   var taskName = document.getElementById("txtTaskName").value;
   var taskDescription = document.getElementById("txtDescription").value;
   var taskStartDate = document.getElementById("txtTaskStartDate").value;
@@ -77,7 +71,7 @@ function createTask() {
     taskDescription,
     taskStartDate,
     taskEndDate,
-    1,
+    0,
     0,
     selectedMember
   );
@@ -86,17 +80,11 @@ function createTask() {
 }
 
 function saveTaskToLocal(task) {
-  // Retrieve existing tasks from local storage or initialize an empty array
   var tasks = JSON.parse(localStorage.getItem("tasks")) || [];
 
-  // Add the new task to the array
   tasks.push(task);
 
-  // Save the updated array back to local storage
   localStorage.setItem("tasks", JSON.stringify(tasks));
 
-  var updatedTasks = JSON.parse(localStorage.getItem("tasks")) || [];
-  // console.log(updatedTasks);
-  var taskJson = JSON.stringify(updatedTasks);
-  alert(taskJson);
+  alert("Task Created!");
 }
