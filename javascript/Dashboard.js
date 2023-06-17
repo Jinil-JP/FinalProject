@@ -5,12 +5,9 @@ var arrPendingTasks = arrTasks.filter(function (task) {
   return task.isCompleted === 0;
 });
 
-console.log(arrPendingTasks);
-
 var arrCompletedTask = arrTasks.filter(function (task) {
   return task.isCompleted === 1;
 });
-console.log(arrCompletedTask);
 
 function generateTable(data, tableId) {
   var table = document.getElementById(tableId);

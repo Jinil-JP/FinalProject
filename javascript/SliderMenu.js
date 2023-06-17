@@ -15,9 +15,10 @@ function setupSliderMenu() {
   });
 
   const isAdmin = localStorage.getItem("isAdmin");
+
   const isAdminValue = JSON.parse(isAdmin);
 
-  if (isAdminValue === true) {
+  if (isAdminValue === 1) {
     arrMenuItems.push({
       name: "Members",
       url: "../app/MemberList.html",

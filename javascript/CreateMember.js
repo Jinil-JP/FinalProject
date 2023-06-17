@@ -1,5 +1,3 @@
-import * as constant from "../src/constants/constant.js";
-
 function createMember() {
   var members = JSON.parse(localStorage.getItem("members")) || [];
   var memberId = members.length;
@@ -26,11 +24,23 @@ function createMember() {
     password
   );
 
-  console.log(member);
-
   document.getElementById("formCreateMember").reset();
 
   saveMemberToLocal(member);
+
+  class User {
+    constructor(id, email, password, isAdmin) {
+      this.id = id;
+      this.email = email;
+      this.password = password;
+      this.isAdmin = isAdmin;
+    }
+  }
+
+  var users = JSON.parse(localStorage.getItem("users")) || [];
+  var userId = users.length;
+  var user = new User(userId, memberEmail, password, 0);
+  saveUserToLocal(user);
 }
 
 function saveMemberToLocal(member) {
@@ -41,4 +51,12 @@ function saveMemberToLocal(member) {
   localStorage.setItem("members", JSON.stringify(members));
 
   alert("Member Created!");
+}
+
+function saveUserToLocal(user) {
+  var users = JSON.parse(localStorage.getItem("users")) || [];
+
+  users.push(user);
+
+  localStorage.setItem("users", JSON.stringify(users));
 }

@@ -1,5 +1,3 @@
-import * as constant from "../src/constants/constant.js";
-
 class Member {
   constructor(id, name, email, hourlyRate, password) {
     this.id = id;
@@ -54,7 +52,6 @@ function handleMemberSelection() {
     selectedMember = arrMembers.find(
       (member) => member.id === parseInt(selectedMemberId)
     );
-    console.log(selectedMember);
   }
 }
 
