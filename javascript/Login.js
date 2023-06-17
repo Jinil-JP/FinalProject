@@ -76,9 +76,10 @@ function validateForm() {
 
   if (filteredUsers.length > 0) {
     filteredUsers.forEach((user) => {
-      localStorage.setItem("isAdmin", user.data.isAdmin);
+      localStorage.setItem("currentUser", JSON.stringify(user.data));
 
-      window.location.href = "../app/Dashboard.html";
+      console.log(user.data);
+      // window.location.href = "../app/Dashboard.html";
     });
   } else {
     document.getElementById("errCredential").textContent =

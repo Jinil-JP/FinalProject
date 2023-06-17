@@ -1,6 +1,6 @@
 function createMember() {
   var members = JSON.parse(localStorage.getItem("members")) || [];
-  var memberId = members.length;
+  var memberId = members.length + 1;
   var memberName = document.getElementById("txtMemberName").value;
   var memberEmail = document.getElementById("txtMemberEmail").value;
   var hourlyRate = document.getElementById("txtHourlyRate").value;

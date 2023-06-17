@@ -1,13 +1,28 @@
 var taskData = localStorage.getItem("tasks");
 var arrTasks = taskData ? JSON.parse(taskData) : [];
 
+const currentUser = localStorage.getItem("currentUser");
+const currentUserData = JSON.parse(currentUser);
+
+console.log(currentUserData.id);
+
 var arrPendingTasks = arrTasks.filter(function (task) {
-  return task.isCompleted === 0;
+  if (currentUserData.isAdmin === 1) {
+    return task.isCompleted === 0;
+  } else {
+    return task.isCompleted === 0 && task.member.id == currentUserData.id;
+  }
 });
 
 var arrCompletedTask = arrTasks.filter(function (task) {
-  return task.isCompleted === 1;
+  if (currentUserData.isAdmin === 1) {
+    return task.isCompleted === 1;
+  } else {
+    return task.isCompleted === 1 && task.member.id == currentUserData.id;
+  }
 });
+
+console.log(arrCompletedTask);
 
 function generateTable(data, tableId) {
   var table = document.getElementById(tableId);
@@ -17,7 +32,7 @@ function generateTable(data, tableId) {
   var thead = document.createElement("thead");
   var headerRow = document.createElement("tr");
   headerRow.innerHTML =
-    "<th>Task ID</th><th>Task Name</th><th>Start Date</th><th>End Date</th><th></th><th></th>";
+    "<th>Task ID</th><th>Task Name</th><th>Start Date</th><th>End Date</th><th></th>";
   thead.appendChild(headerRow);
   table.appendChild(thead);
 
@@ -30,7 +45,6 @@ function generateTable(data, tableId) {
       <td>${data[i].startDate}</td>
       <td>${data[i].endDate}</td>
       <td><button onclick="viewDetails(${data[i].taskId})">View Details</button></td>
-      <td><button onclick="deleteTask(${data[i].taskId})">Delete Task</button></td>
     `;
     tbody.appendChild(row);
   }

@@ -1,6 +1,8 @@
 var memberData = localStorage.getItem("members");
 var arrMembers = memberData ? JSON.parse(memberData) : [];
 
+console.log(arrMembers);
+
 function generateTable(data, tableId) {
   var table = document.getElementById(tableId);
 

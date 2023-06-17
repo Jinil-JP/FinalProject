@@ -14,11 +14,10 @@ function setupSliderMenu() {
     url: "../app/Dashboard.html",
   });
 
-  const isAdmin = localStorage.getItem("isAdmin");
+  const currentUser = localStorage.getItem("currentUser");
+  const currentUserData = JSON.parse(currentUser);
 
-  const isAdminValue = JSON.parse(isAdmin);
-
-  if (isAdminValue === 1) {
+  if (currentUserData.isAdmin === 1) {
     arrMenuItems.push({
       name: "Members",
       url: "../app/MemberList.html",
