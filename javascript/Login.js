@@ -23,7 +23,7 @@ function addAdminUser() {
     }
   }
 
-  var admin = new User(users.length, "admin@admin.com", "Admin@123", 1);
+  var admin = new User(0, "admin@admin.com", "Admin@123", 1);
 
   saveAdminToLocal(admin);
 }
@@ -79,7 +79,7 @@ function validateForm() {
       localStorage.setItem("currentUser", JSON.stringify(user.data));
 
       console.log(user.data);
-      // window.location.href = "../app/Dashboard.html";
+      window.location.href = "../app/Dashboard.html";
     });
   } else {
     document.getElementById("errCredential").textContent =
