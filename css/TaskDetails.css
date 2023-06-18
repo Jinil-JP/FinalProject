@@ -1,0 +1,50 @@
+body {
+  background-image: url("../src/asset/ig_LoginTheme.jpeg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  font-family: Arial, sans-serif;
+}
+
+#taskDetails {
+  margin-bottom: 20px;
+}
+
+#taskDetails table {
+  border-collapse: collapse;
+}
+
+#taskDetails th,
+#taskDetails td {
+  color: white;
+  padding: 8px;
+  border: 1px solid white;
+  text-align: left;
+}
+
+#taskDetails th {
+  background-color: #f2f2f2;
+}
+
+#memberDetails table {
+  border-collapse: collapse;
+}
+
+#memberDetails th,
+#memberDetails td {
+  color: white;
+  padding: 8px;
+  border: 1px solid white;
+  text-align: left;
+}
+
+#memberDetails th {
+  background-color: #f2f2f2;
+}
+
+#memberDetails h2 {
+  margin-top: 20px;
+}
+
+h2 {
+  color: white;
+}

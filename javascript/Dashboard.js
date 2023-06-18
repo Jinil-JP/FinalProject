@@ -44,7 +44,7 @@ function generateTable(data, tableId) {
       <td>${data[i].name}</td>
       <td>${data[i].startDate}</td>
       <td>${data[i].endDate}</td>
-      <td><button onclick="viewDetails(${data[i].taskId})">View Details</button></td>
+      <td><button onclick="viewDetails(${data[i].id})">View Details</button></td>
     `;
     tbody.appendChild(row);
   }
@@ -67,7 +67,7 @@ function changeTab(tabIndex) {
 }
 
 function viewDetails(taskId) {
-  console.log("View details for Task ID:", taskId);
+  window.location.href = "TaskDetails.html?taskId=" + taskId;
 }
 
 function generateTables() {
