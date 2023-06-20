@@ -6,6 +6,12 @@ function createMember() {
   var hourlyRate = document.getElementById("txtHourlyRate").value;
   var password = document.getElementById("txtPassword").value;
 
+  // Validate blank fields
+  if (!memberName || !memberEmail || !hourlyRate || !password) {
+    alert("Please fill in all the required fields.");
+    return;
+  }
+
   class Member {
     constructor(id, name, email, hourlyRate, password) {
       this.id = id;

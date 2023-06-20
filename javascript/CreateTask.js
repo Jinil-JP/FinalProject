@@ -63,6 +63,30 @@ function createTask() {
   var taskStartDate = document.getElementById("txtTaskStartDate").value;
   var taskEndDate = document.getElementById("txtTaskEndDate").value;
 
+  if (
+    !taskName ||
+    !taskDescription ||
+    !taskStartDate ||
+    !taskEndDate ||
+    selectedMember.name == undefined
+  ) {
+    alert("Please fill in all the required fields.");
+    return;
+  }
+
+  var startDate = new Date(taskStartDate);
+  var endDate = new Date(taskEndDate);
+
+  if (isNaN(startDate) || isNaN(endDate)) {
+    alert("Invalid date format. Please enter dates in the correct format.");
+    return;
+  }
+
+  if (startDate > endDate) {
+    alert("Start date must be before the end date.");
+    return;
+  }
+
   var task = new Task(
     taskId,
     taskName,
