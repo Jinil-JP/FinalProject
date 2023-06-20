@@ -70,6 +70,20 @@ function generateTaskTable(task) {
     hoursWorkedRow.appendChild(hoursWorkedValueCell);
 
     table.appendChild(hoursWorkedRow);
+
+    const costOfProjectRow = document.createElement("tr");
+    const costOfProjectCell = document.createElement("td");
+    costOfProjectCell.textContent = "Cost of Project (CAD)";
+    costOfProjectRow.appendChild(costOfProjectCell);
+
+    table.appendChild(costOfProjectCell);
+
+    const costOfProjectValueCell = document.createElement("td");
+    costOfProjectValueCell.textContent =
+      task.member.hourlyRate * task.hoursWorked;
+    costOfProjectRow.appendChild(costOfProjectValueCell);
+
+    table.appendChild(costOfProjectValueCell);
   } else {
     // Create a button to complete the task
     const completeTaskRow = document.createElement("tr");
@@ -78,7 +92,6 @@ function generateTaskTable(task) {
     const completeButton = document.createElement("button");
     completeButton.textContent = "Complete Task";
     completeButton.addEventListener("click", function () {
-      // Handle the task completion logic here
       completeTask(task.id);
     });
     completeTaskCell.appendChild(completeButton);
@@ -140,6 +153,25 @@ function generateMemberTable(member) {
 
 function completeTask(taskId) {
   console.log("Completed task with TaskID :: ", taskId);
+
+  const hoursWorked = prompt("Enter hours you worked this task.");
+  if (hoursWorked !== null) {
+    const parsedHours = parseInt(hoursWorked);
+    if (!isNaN(parsedHours) && parsedHours >= 0) {
+      // Update the task with the hours worked
+      const taskData = localStorage.getItem("tasks");
+      const arrTasks = taskData ? JSON.parse(taskData) : [];
+      const task = arrTasks.find((task) => task.id === parseInt(taskId));
+      if (task) {
+        task.isCompleted = 1;
+        task.hoursWorked = parsedHours;
+        localStorage.setItem("tasks", JSON.stringify(arrTasks));
+        location.reload(); // Refresh the page to reflect the updated data
+      }
+    } else {
+      alert("Invalid input. Please enter a valid number of hours worked.");
+    }
+  }
 }
 
 var taskData = localStorage.getItem("tasks");
@@ -157,4 +189,18 @@ if (task) {
 
   const memberTable = generateMemberTable(task.member);
   document.getElementById("memberDetails").appendChild(memberTable);
+}
+
+function deleteTask() {
+  const confirmation = confirm("Are you sure you want to delete this task?");
+  if (confirmation) {
+    const taskData = localStorage.getItem("tasks");
+    const arrTasks = taskData ? JSON.parse(taskData) : [];
+    const index = arrTasks.findIndex((task) => task.id === parseInt(taskId));
+    if (index !== -1) {
+      arrTasks.splice(index, 1);
+      localStorage.setItem("tasks", JSON.stringify(arrTasks));
+      location.href = "../app/Dashboard.html";
+    }
+  }
 }

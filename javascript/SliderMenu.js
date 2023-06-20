@@ -42,6 +42,13 @@ function setupSliderMenu() {
     const link = document.createElement("a");
     link.href = menuItem.url;
     link.textContent = menuItem.name;
+
+    if (menuItem.name === "Logout") {
+      link.addEventListener("click", function () {
+        localStorage.removeItem("currentUser");
+      });
+    }
+
     sidenav.appendChild(link);
   }
 }

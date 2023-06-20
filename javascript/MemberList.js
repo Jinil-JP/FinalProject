@@ -11,7 +11,7 @@ function generateTable(data, tableId) {
   var thead = document.createElement("thead");
   var headerRow = document.createElement("tr");
   headerRow.innerHTML =
-    "<th>Member Id</th><th>Member Name</th><th>Member Email</th><th>Hourly Rate</th><th></th>";
+    "<th>Member Id</th><th>Member Name</th><th>Member Email</th><th>Hourly Rate</th>";
   thead.appendChild(headerRow);
   table.appendChild(thead);
 
@@ -23,9 +23,10 @@ function generateTable(data, tableId) {
       <td>${data[i].name}</td>
       <td>${data[i].email}</td>
       <td>${data[i].hourlyRate}</td>
-      <td><button onclick="deleteMember(${data[i].id})">Delete Member</button></td>
     `;
     tbody.appendChild(row);
+
+    //<td><button onclick="deleteMember(${data[i].id})">Delete Member</button></td>
   }
   table.appendChild(tbody);
 }

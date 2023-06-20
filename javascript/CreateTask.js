@@ -63,8 +63,6 @@ function createTask() {
   var taskStartDate = document.getElementById("txtTaskStartDate").value;
   var taskEndDate = document.getElementById("txtTaskEndDate").value;
 
-  var member = new Member(1, "John Doe", "john@example.com", 20);
-
   var task = new Task(
     taskId,
     taskName,
@@ -87,4 +85,5 @@ function saveTaskToLocal(task) {
   localStorage.setItem("tasks", JSON.stringify(tasks));
 
   alert("Task Created!");
+  location.href = "../app/Dashboard.html";
 }

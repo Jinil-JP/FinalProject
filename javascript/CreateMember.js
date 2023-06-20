@@ -51,6 +51,7 @@ function saveMemberToLocal(member) {
   localStorage.setItem("members", JSON.stringify(members));
 
   alert("Member Created!");
+  location.href = "../app/MemberList.html";
 }
 
 function saveUserToLocal(user) {
